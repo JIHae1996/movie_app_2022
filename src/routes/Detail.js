@@ -6,6 +6,11 @@ function Detail() {
   const location = useLocation();
   console.log(location);
 
+  const navigate = useNavigate();
+  if(location.state === undefined){
+    navigate('/'); //홈으로 이동 즉 리다이렉트 기능
+  }
+
   const{genres,id,poster,summary,title,year} = location.state;
   return (
     <div className='detail'>
